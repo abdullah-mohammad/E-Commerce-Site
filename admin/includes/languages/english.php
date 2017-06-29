@@ -4,9 +4,17 @@
         
         static $lang = array(
             
-            //Home Page
-            'MESSAGE'=>'Welcome',
-            'ADMIN'=>'Administrator',
+            //Navbar Links
+            
+            'HOME_ADMIN'    =>'Home',
+            'CATEGORIES'    =>'Categories',
+            'ITEMS'         =>'Items',
+            'MEMBERS'       =>'Members',
+            'STATISTICS'    =>'Statistics',
+            'LOGS'          =>'Logs',
+            'EDIT_PROFILE'  =>'Edit Profile',
+            'SETTINGS'      =>'Settings',
+            'LOGOUT'        =>'Logout',
         );
         
         return $lang[$phrase];
