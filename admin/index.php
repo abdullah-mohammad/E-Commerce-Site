@@ -1,6 +1,8 @@
 <?php   
     session_start();
-    $noNavbar = '';
+    $noNavbar  = '';
+    $pageTitle = 'Login';
+
     if(isset($_SESSION['Username'])){
         header('Location: dashboard.php'); // Redirect To Dashboard Page
     }
@@ -14,14 +16,26 @@
         
         // Check If The User Exist In Database
         
-        $stmt = $con->prepare("SELECT Username, Password FROM users WHERE Username = ? AND Password = ? AND GroupID = 1 ");
+        $stmt = $con->prepare(" SELECT
+                                        UserID, Username, Password
+                                FROM 
+                                        users 
+                                WHERE 
+                                        Username = ? 
+                                AND
+                                        Password = ?
+                                AND 
+                                        GroupID = 1 
+                                LIMIT 1");
         $stmt->execute(array($username, $hashedPass));
+        $row = $stmt->fetch();
         $count = $stmt->rowCount();
         
         //If Count > 0 This Mean The Database Contain Record About This Username
         if($count > 0){
             
             $_SESSION['Username'] = $username; // Register Session Username
+            $_SESSION['ID'] = $row['UserID'];  // Register Session UserID
             header('Location: dashboard.php'); // Redirect To Dashboard Page
             exit();
         }

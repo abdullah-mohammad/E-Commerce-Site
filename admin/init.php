@@ -5,13 +5,16 @@
     // Routes
 
     $tpl    = 'includes/templates/';    // Template Directory
+    $lang   = 'includes/languages/';    // Language Directory
+    $func   = 'includes/functions/';    // functions Directory
     $css    = 'layout/css/';            // CSS Directory
     $js     = 'layout/js/';             // Js Directory
-    $lang   = 'includes/languages/';    // Language Directory
+    
 
 
     // Include The Important Files
 
+    include $func.'function.php';
     include $lang.'english.php'; 
     include $tpl.'header.php';
     

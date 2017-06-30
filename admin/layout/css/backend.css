@@ -73,3 +73,12 @@ body {
     background-color: #0288D1;
 }
 /* End Bootstrap Edits */
+
+/* Start Members Page */
+h1 {
+    font-size: 65px;
+    margin: 40px 0;
+    font-weight: bold;
+    color: #666;
+}
+/* End Members Page */
