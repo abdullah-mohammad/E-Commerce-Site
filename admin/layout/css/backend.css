@@ -1,8 +1,24 @@
+/*
+    #################################################
+    # App version : 1.0                             #
+    # Author      : Abdullah Al Mohammad            #
+    # E-mail      : abdullah.almohammad@hotmail.com # 
+    # Date        : 02.07.2017                      #
+    #################################################
+*/
 /* Start Main Rulez */
 
 body {
     background-color: #F4F4F4;
     font-size: 16px;
+}
+
+.asterisk{
+    position: absolute;
+    font-size: 30px;
+    right: 20px;
+    top: 10px;
+    color: #E57373;
 }
 
 /* End Main Rulez */
@@ -72,7 +88,75 @@ body {
     //color: #fff;
     background-color: #0288D1;
 }
+
+.form-control {
+    position: relative;
+}
+
 /* End Bootstrap Edits */
+
+/* Start Dashboard Page */
+.home-stats .stat{
+    padding: 30px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.home-stats .stat a {
+    color: #fff;
+}
+
+.home-stats .stat a:hover {
+    text-decoration: none;
+}
+    
+.home-stats .stat span{
+    display: block;
+    font-size: 60px;
+    
+}
+
+.home-stats .st-members{
+    background-color:#3498db;
+}
+.home-stats .st-pending{
+    background-color:#2ecc71;
+}
+.home-stats .st-items{
+    background-color:#e74c3c;
+}
+.home-stats .st-comments {
+    background-color:#f1c40f;
+}
+
+.latest {
+    margin-top: 30px;
+}
+
+.latest-users {
+    margin-bottom: 0;
+}
+
+.latest-users li {
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.latest-users li:nth-child(odd) {
+    background-color: #eee;
+}
+
+.latest-users .btn-success,
+.latest-users .btn-info{
+    padding: 2px 8px;
+}
+
+.latest-users .btn-info{
+    margin-right: 5px;
+}
+/* End Dashboard Edits */
 
 /* Start Members Page */
 h1 {
@@ -80,5 +164,36 @@ h1 {
     margin: 40px 0;
     font-weight: bold;
     color: #666;
+}
+.show-pass {
+    position: absolute;
+    top: 7px;
+    right: 34px;
+    color: #BDBDBD;
+}
+
+.main-table {
+    -webkit-box-shadow:0 3px 10px #ccc;
+    -moz-box-shadow:0 3px 10px #ccc;
+    box-shadow:0 3px 10px #ccc;
+}
+
+.main-table td {
+    background-color: #fff;
+    vertical-align: middle !important;
+}
+
+.main-table tr:first-child td{
+    background-color: #424242;
+    color: #fff;
+    text-align: center;
+}
+
+.main-table .btn {
+    padding: 3px 10px;
+}
+
+.activate {
+    margin-left: 4px;
 }
 /* End Members Page */

@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><?php echo lang('HOME_ADMIN')?></a>
+      <a class="navbar-brand" href="dashboard.php"><?php echo lang('HOME_ADMIN')?></a>
     </div>
 
     <div class="collapse navbar-collapse" id="app-nav">
@@ -28,6 +28,6 @@
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>

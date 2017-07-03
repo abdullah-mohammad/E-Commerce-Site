@@ -1,4 +1,4 @@
-        <div class="footer">
+<div class="footer">
             
         </div>
         <script src="<?php echo $js; ?>jquery-2.2.4.min.js"></script>
