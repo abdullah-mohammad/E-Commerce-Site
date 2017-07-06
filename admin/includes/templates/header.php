@@ -14,5 +14,5 @@
         <link rel="stylesheet" href="<?php echo $css; ?>bootstrap.min.css" />
         <link rel="stylesheet" href="<?php echo $css; ?>font-awesome.min.css" />
         <link rel="stylesheet" href="<?php echo $css; ?>backend.css" />
-    </head>
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <body>

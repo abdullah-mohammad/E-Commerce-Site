@@ -8,6 +8,8 @@
     #################################################
     */
 
+    ob_start(); // Output buffering start
+
     session_start();
     if(isset($_SESSION['Username'])){
         
@@ -108,3 +110,7 @@
         
         exit();
     }
+    
+    ob_end_flush();
+
+?>

@@ -9,11 +9,14 @@
     */
     /*
     ================================================
-    = Manage Members Page
-    = you can Add | Edit | Delete Members from here
+    = Members Page
     ================================================
     */
+
+    ob_start(); // Output buffering start
+
     session_start();
+
     if(isset($_SESSION['Username'])){
         
         include 'init.php';
@@ -112,7 +115,7 @@
                         <!-- Start Submit field -->
                         <div class="form-group form-group-lg">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <input type="submit" value="Save" class="btn btn-primary btn-lg" />
+                                <input type="submit" value="Add Member" class="btn btn-primary btn-lg" />
                             </div>
                         </div>
                         <!-- End Submit field -->
@@ -353,7 +356,7 @@
                     // select all data debend on this ID
                     $stmt = $con->prepare(" DELETE FROM users WHERE UserID = :zuserid");
 
-                    $stmt->bindParam(':zuserid',$userid);
+                    $stmt->bindParam('zuserid',$userid);
 
                     // Execute query
                     $stmt->execute();
@@ -411,3 +414,7 @@
         
         exit();
     }
+
+    ob_end_flush();
+
+?>

@@ -11,6 +11,7 @@
 body {
     background-color: #F4F4F4;
     font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .asterisk{
@@ -85,7 +86,7 @@ body {
 
 .dropdown-menu > li > a:focus
 .dropdown-menu > li > a:hover{
-    //color: #fff;
+    color: #fff;
     background-color: #0288D1;
 }
 
@@ -197,3 +198,113 @@ h1 {
     margin-left: 4px;
 }
 /* End Members Page */
+/* Start Categories Page */
+
+.categories .panel-heading {
+    color: #959595;
+    font-weight: bold;
+}
+.categories .panel-body {
+    padding: 0;
+}
+
+.categories .option a{
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.categories .option span {
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+.categories .option .active{
+    color: #e74c3c;
+}
+
+.categories hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.categories .cat {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    padding: 15px;
+    position:relative; 
+    overflow: hidden;
+}
+.categories .cat:hover {
+    background-color: #eee;
+}
+.categories .cat:hover .hidden-buttons {
+    right: 10px;
+}
+.categories .cat .hidden-buttons {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    top: 15px;
+    right: -120px;
+}
+
+.categories .cat .hidden-buttons a {
+    margin-right: 5px;
+}
+
+.categories .cat h3 {
+    cursor: pointer;
+    margin: 0;
+    font-weight: bold;
+    color: #6a6a6a;
+}
+.categories .cat .full-view p {
+    margin: 10px 0;
+    color: #707070;
+}
+
+.categories .cat:last-of-type ~ hr {
+    
+    display: none;
+}
+
+.categories .cat .visibility{
+    background-color: #d35400;
+    color: #fff;
+    padding: 3px 5px;
+    margin-right: 5px;
+    border-radius: 2px;
+    font-size: 15px;
+    -webkit-box-shadow:0 3px 3px #ccc;
+    -moz-box-shadow:0 3px 3px #ccc;
+    box-shadow:0 3px 3px #ccc;
+}
+.categories .cat .commenting{
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 3px 5px;
+    margin-right: 5px;
+    border-radius: 2px;
+    font-size: 15px;
+    -webkit-box-shadow:0 3px 3px #ccc;
+    -moz-box-shadow:0 3px 3px #ccc;
+    box-shadow:0 3px 3px #ccc;
+}
+.categories .cat .advertises{
+    background-color: #c0392b;
+    color: #fff;
+    padding: 3px 5px;
+    margin-right: 5px;
+    border-radius: 2px;
+    font-size: 15px;
+    -webkit-box-shadow:0 3px 3px #ccc;
+    -moz-box-shadow:0 3px 3px #ccc;
+    box-shadow:0 3px 3px #ccc;
+}
+.categories .add-category {
+
+    margin-bottom: 10px;
+}
+/* End Categories Page */
