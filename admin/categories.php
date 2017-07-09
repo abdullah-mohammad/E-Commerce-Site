@@ -18,6 +18,8 @@
     session_start();
 
     if(isset($_SESSION['Username'])){
+
+        $pageTitle = 'Categories';
         
         include 'init.php';
         
@@ -80,7 +82,7 @@
             </div>
             
             <?php
-        }elseif($do == 'Add'){      // Add Page            ################################################################################
+        }elseif($do == 'Add'){  // Add Page            ################################################################################
             ?>
             <h1 class="text-center">Add new Category</h1>
             <div class="container">
@@ -380,17 +382,22 @@
                 // if there's such ID show the form
                 if($check > 0){
 
-                    // select all data debend on this ID
-                    $stmt = $con->prepare(" DELETE FROM categories WHERE ID = :zcatid");
+                    try {
+                        // select all data debend on this ID
+                        $stmt = $con->prepare(" DELETE FROM categories WHERE ID = :zcatid");
 
-                    $stmt->bindParam('zcatid',$catid);
+                        $stmt->bindParam('zcatid',$catid);
 
-                    // Execute query
-                    $stmt->execute();
+                        // Execute query
+                        $stmt->execute();
 
-                    // echo seccess message
-                    $theMsg = '<div class="alert alert-success">'.$stmt->rowCount().' Record Deleted</div>';
-                    redirectHome($theMsg,'back');
+                        // echo seccess message
+                        $theMsg = '<div class="alert alert-success">'.$stmt->rowCount().' Record Deleted</div>';
+                        redirectHome($theMsg,'back');
+                    } catch (Exception $e) {
+                        $theMsg = '<div class="alert alert-danger">Can not delete this label, please make sure it is empty</div>';
+                        redirectHome($theMsg,'back');
+                    }
                     
                 }else{
                     

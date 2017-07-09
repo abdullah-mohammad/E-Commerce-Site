@@ -18,6 +18,8 @@
     session_start();
 
     if(isset($_SESSION['Username'])){
+
+        $pageTitle = 'Members';
         
         include 'init.php';
         
@@ -29,7 +31,7 @@
             $query = isset($_GET['page'])&& $_GET['page']=='Pending'?'AND RegStatus = 0':'';
             
             // select all Users excapt Admins
-            $stmt = $con->prepare(" SELECT * FROM users WHERE GroupID != 1 $query");
+            $stmt = $con->prepare(" SELECT * FROM users WHERE GroupID != 1 $query ORDER BY UserID DESC");
             
             // Execute query
             $stmt->execute();
@@ -319,6 +321,24 @@
                 // check if there's no error the update operation
                 if(empty($formErrors)){
                     
+                    // select all data debend on this ID
+                    $stmt2 = $con->prepare(" SELECT * FROM users WHERE Username = ? AND UserID != ?");
+                    
+                    // Execute query
+                    $stmt2->execute(array($user,$id));
+                    
+                    // fetch the data
+                    $row2 = $stmt2->fetch();
+                    
+                    // the row count
+                    $count = $stmt2->rowCount();
+                    if($count == 1){
+
+                        $theMsg = '<div class="alert alert-danger">Sorry this User is exist</div>';
+                        
+                        redirectHome($theMsg,'back');
+                    }else{
+                    
                     // update the database with the info
                     $stmt = $con->prepare(" UPDATE users SET Username = ?,Email = ?,Fullname = ?,Password = ? WHERE UserID = ?");
                     $stmt->execute(array($user,$email,$name,$pass,$id));
@@ -326,7 +346,7 @@
                     // echo seccess message
                     $theMsg = '<div class="alert alert-success">'.$stmt->rowCount().' Record Update</div>';
                     redirectHome($theMsg,'back');
-                    
+                    }
                 }else{
                     redirectHome('','back');
                 }

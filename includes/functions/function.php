@@ -9,6 +9,58 @@
     */
 
     /*
+    **  Get categories function v 1.0
+    ** function to get categories from database
+    */
+
+    function getCat(){
+        
+        global $con;
+        
+        $getStmt = $con->prepare("SELECT * FROM categories ORDER BY ID DESC");
+        
+        $getStmt->execute();
+        
+        $rows = $getStmt->fetchAll();
+        
+        return $rows;
+    }
+
+
+
+
+    /*
+    **  Get Items function v 1.0
+    ** function to get items from database
+    */
+
+    function getItems($Cat_ID){
+        
+        global $con;
+        
+        $getStmt = $con->prepare("SELECT * FROM items WHERE Cat_ID = ? ORDER BY Item_ID DESC");
+        
+        $getStmt->execute(array($Cat_ID));
+        
+        $rows = $getStmt->fetchAll();
+        
+        return $rows;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /****************************************************************************/
+    /*
     ** Title function v 1.0
     ** Title function that echo the page title in case the page
     ** has the variable $pageTitle and echo default title for other pages

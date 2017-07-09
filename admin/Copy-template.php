@@ -17,6 +17,8 @@
     session_start();
 
     if(isset($_SESSION['Username'])){
+
+        $pageTitle = 'Template';
         
         include 'init.php';
         
